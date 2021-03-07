@@ -3,21 +3,21 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const DetailCharacters = props => {
+export const DetailVehicles = props => {
 	const { store, actions } = useContext(Context);
 	const { theid } = useParams();
 	useEffect(() => {
-		actions.getCharacters();
+		actions.getVehicles();
 	}, []);
 	return (
 		<>
 			<div className="container">
 				<div className="row">
 					<div className="col-6">
-						<img src="https://www.latercera.com/resizer/HDh7AGTUkFcljXvdxAyrwep19O0=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/ZMQ6TEMTCJBAFBUHC2OXHKU3NE.jpg" />
+						<img src="https://i.blogs.es/5382dc/death-star/450_1000.jpg" />
 					</div>
 					<div className="col-6">
-						<h1 className="titleDetail">{store.characters[theid].name}</h1>
+						<h1 className="titleDetail">{store.vehicles[theid].name}</h1>
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipiscing elit scelerisque odio, mi bibendum felis
 							et semper fames dapibus dictum, nisl curabitur dictumst malesuada fusce metus habitasse
@@ -33,34 +33,34 @@ export const DetailCharacters = props => {
 					<div className="col">
 						<p>Name</p>
 						<br />
-						<p>{store.characters[theid].name}</p>
+						<p>{store.vehicles[theid].name}</p>
 						<br />
 					</div>
 					<div className="col">
-						<p>Birth Year</p>
+						<p>Model</p>
 						<br />
-						<p>{store.characters[theid].birth_year}</p>
+						<p>{store.vehicles[theid].model}</p>
 						<br />
 					</div>
 					<div className="col">
-						<p>Height</p>
+						<p>Passengers</p>
 						<br />
-						<p>{store.characters[theid].height}</p>
+						<p>{store.vehicles[theid].passengers}</p>
 					</div>
 					<div className="col">
-						<p>Gender</p>
+						<p>Crew</p>
 						<br />
-						<p>{store.characters[theid].gender}</p>
+						<p>{store.vehicles[theid].crew}</p>
 					</div>
 					<div className="col">
-						<p>Skin Color</p>
+						<p>Cargo Capacity</p>
 						<br />
-						<p>{store.characters[theid].skin_color}</p>
+						<p>{store.vehicles[theid].cargo_capacity}</p>
 					</div>
 					<div className="col">
-						<p>Eye Color</p>
+						<p>Consumables</p>
 						<br />
-						<p>{store.characters[theid].eye_color}</p>
+						<p>{store.vehicles[theid].consumables}</p>
 					</div>
 				</div>
 			</div>
@@ -68,6 +68,6 @@ export const DetailCharacters = props => {
 	);
 };
 
-DetailCharacters.propTypes = {
+DetailVehicles.propTypes = {
 	match: PropTypes.object
 };

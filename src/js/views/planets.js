@@ -3,21 +3,21 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const DetailCharacters = props => {
+export const DetailPlanets = props => {
 	const { store, actions } = useContext(Context);
 	const { theid } = useParams();
 	useEffect(() => {
-		actions.getCharacters();
+		actions.getPlanets();
 	}, []);
 	return (
 		<>
 			<div className="container">
 				<div className="row">
 					<div className="col-6">
-						<img src="https://www.latercera.com/resizer/HDh7AGTUkFcljXvdxAyrwep19O0=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/ZMQ6TEMTCJBAFBUHC2OXHKU3NE.jpg" />
+						<img src="https://static.wikia.nocookie.net/esstarwars/images/a/a5/Dantooine_Resistance.jpg" />
 					</div>
 					<div className="col-6">
-						<h1 className="titleDetail">{store.characters[theid].name}</h1>
+						<h1 className="titleDetail">{store.planets[theid].name}</h1>
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipiscing elit scelerisque odio, mi bibendum felis
 							et semper fames dapibus dictum, nisl curabitur dictumst malesuada fusce metus habitasse
@@ -33,34 +33,34 @@ export const DetailCharacters = props => {
 					<div className="col">
 						<p>Name</p>
 						<br />
-						<p>{store.characters[theid].name}</p>
+						<p>{store.planets[theid].name}</p>
 						<br />
 					</div>
 					<div className="col">
-						<p>Birth Year</p>
+						<p>Climate</p>
 						<br />
-						<p>{store.characters[theid].birth_year}</p>
+						<p>{store.planets[theid].climate}</p>
 						<br />
 					</div>
 					<div className="col">
-						<p>Height</p>
+						<p>Orbital Period</p>
 						<br />
-						<p>{store.characters[theid].height}</p>
+						<p>{store.planets[theid].orbital_period}</p>
 					</div>
 					<div className="col">
-						<p>Gender</p>
+						<p>Population</p>
 						<br />
-						<p>{store.characters[theid].gender}</p>
+						<p>{store.planets[theid].population}</p>
 					</div>
 					<div className="col">
-						<p>Skin Color</p>
+						<p>Terrain</p>
 						<br />
-						<p>{store.characters[theid].skin_color}</p>
+						<p>{store.planets[theid].terrain}</p>
 					</div>
 					<div className="col">
-						<p>Eye Color</p>
+						<p>Gravity</p>
 						<br />
-						<p>{store.characters[theid].eye_color}</p>
+						<p>{store.planets[theid].gravity}</p>
 					</div>
 				</div>
 			</div>
@@ -68,6 +68,6 @@ export const DetailCharacters = props => {
 	);
 };
 
-DetailCharacters.propTypes = {
+DetailPlanets.propTypes = {
 	match: PropTypes.object
 };

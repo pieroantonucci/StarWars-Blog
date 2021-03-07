@@ -1,0 +1,47 @@
+.scrolling-wrapper{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.card{
+    display:inline-block;
+}
+
+.btn-outline-warning{
+    float: right;
+}
+
+h1{
+    color: darkred;
+    margin-bottom: 15px;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.show>.dropdown-menu {
+  display: block;
+  position: absolute;
+}
+
+img {
+    width:100%;
+}
+
+.titleDetail{
+    text-align: center;
+}
+.logo {
+    width:150px;
+}
+
+.col{
+    text-align: center;
+}
+
+.fa-heart :hover{
+    background-color: black;
+    color: black;
+}
